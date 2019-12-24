@@ -1,0 +1,5 @@
+run redis in cd redis>redis-server
+
+run celery in cd maindir>celery -A project_name worker --pool=eventlet
+
+run async task: test_task.delay(argument_x)
