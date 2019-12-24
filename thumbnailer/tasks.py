@@ -14,8 +14,9 @@ def test_task(x, y):
 
 @shared_task
 def make_thumbnail(file_path, thumbnails=[]):
-    os.chdir(settings)
-    path, file = os.pardir.split(file_path)
+    os.chdir(settings.IMAGES_DIR)
+    print("debug")
+    path, file = os.path.split(file_path)
     file_name, ext = os.path.splitext(file)
 
     zip_file = f"{file_name}.zip"
